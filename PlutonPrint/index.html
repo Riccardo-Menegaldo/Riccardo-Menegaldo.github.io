@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pluton Print — Stampa 3D professionale | Invia il progetto, noi stampiamo e spediamo</title>
+  <meta name="description" content="Pluton Print è il servizio di stampa 3D online: ci invii il tuo progetto, lo stampiamo con tecnologia FDM e te lo spediamo in 48/72h in tutta Italia." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237C5CFF'/%3E%3Cstop offset='1' stop-color='%2300E0FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M16 2l12 7v14l-12 7L4 23V9z'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="logo" aria-label="Pluton Print — Home">
+        <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7C5CFF"/>
+              <stop offset="1" stop-color="#00E0FF"/>
+            </linearGradient>
+          </defs>
+          <path d="M16 2.5l11.5 6.6v13.8L16 29.5 4.5 22.9V9.1z" stroke="url(#logoGrad)" stroke-width="1.6" fill="rgba(124,92,255,.12)"/>
+          <path d="M16 2.5v13.3m0 0l11.5-6.7M16 15.8L4.5 9.1m11.5 6.7v13.7" stroke="url(#logoGrad)" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo__text">Pluton<span>Print</span></span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Navigazione principale">
+        <a href="#come-funziona">Come funziona</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#materiali">Materiali</a>
+        <a href="#prezzi">Prezzi</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contatti" class="btn btn--primary btn--sm nav__cta-mobile">Preventivo gratuito</a>
+      </nav>
+
+      <a href="#contatti" class="btn btn--primary btn--sm nav__cta">Preventivo gratuito</a>
+
+      <button class="nav__burger" id="burger" aria-label="Apri il menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="stars" id="stars"></div>
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="hero__grid"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="badge reveal">
+            <span class="badge__dot"></span>
+            Servizio di stampa 3D professionale
+          </span>
+          <h1 class="hero__title reveal">
+            Il tuo progetto,<br />
+            <span class="gradient-text">stampato in 3D.</span>
+          </h1>
+          <p class="hero__sub reveal">
+            Ci invii il file. Noi lo stampiamo con tecnologia FDM,
+            lo controlliamo pezzo per pezzo e te lo spediamo in
+            <strong>48/72&nbsp;ore</strong> in tutta Italia.
+          </p>
+          <div class="hero__actions reveal">
+            <a href="#contatti" class="btn btn--primary btn--lg">
+              Richiedi preventivo gratuito
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#come-funziona" class="btn btn--ghost btn--lg">Scopri come funziona</a>
+          </div>
+          <ul class="hero__trust reveal">
+            <li>Nessun ordine minimo</li>
+            <li>Preventivo in 24h</li>
+            <li>Spedizione tracciata</li>
+          </ul>
+        </div>
+
+        <!-- Scena 3D: stampa strato dopo strato -->
+        <div class="hero__scene reveal" aria-hidden="true">
+          <div class="scene">
+            <div class="scene__orbit scene__orbit--1"></div>
+            <div class="scene__orbit scene__orbit--2"></div>
+
+            <div class="printer">
+              <div class="printer__nozzle">
+                <div class="printer__laser"></div>
+              </div>
+              <div class="print-object">
+                <div class="layer" style="--i:0;  --w:56px"></div>
+                <div class="layer" style="--i:1;  --w:94px"></div>
+                <div class="layer" style="--i:2;  --w:116px"></div>
+                <div class="layer" style="--i:3;  --w:132px"></div>
+                <div class="layer" style="--i:4;  --w:144px"></div>
+                <div class="layer" style="--i:5;  --w:152px"></div>
+                <div class="layer" style="--i:6;  --w:158px"></div>
+                <div class="layer" style="--i:7;  --w:160px"></div>
+                <div class="layer" style="--i:8;  --w:158px"></div>
+                <div class="layer" style="--i:9;  --w:152px"></div>
+                <div class="layer" style="--i:10; --w:144px"></div>
+                <div class="layer" style="--i:11; --w:132px"></div>
+                <div class="layer" style="--i:12; --w:116px"></div>
+                <div class="layer" style="--i:13; --w:94px"></div>
+                <div class="layer" style="--i:14; --w:56px"></div>
+              </div>
+              <div class="printer__bed"></div>
+            </div>
+
+            <div class="chip chip--1">.STL</div>
+            <div class="chip chip--2">.OBJ</div>
+            <div class="chip chip--3">.3MF</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat reveal">
+          <span class="stat__num gradient-text" data-count="12000" data-suffix="+">0</span>
+          <span class="stat__label">Pezzi stampati</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num gradient-text" data-count="48" data-suffix="h">0</span>
+          <span class="stat__label">Tempo medio di stampa</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num gradient-text" data-count="15" data-suffix="+">0</span>
+          <span class="stat__label">Materiali disponibili</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num gradient-text" data-count="4.9" data-decimals="1" data-suffix="/5">0</span>
+          <span class="stat__label">Valutazione dei clienti</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COME FUNZIONA ===================== -->
+    <section class="section" id="come-funziona">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Come funziona</span>
+          <h2>Tre passi,<br /><span class="gradient-text">zero complicazioni.</span></h2>
+          <p>Dal file al pacco alla tua porta. Tu pensa alle idee, al resto pensiamo noi.</p>
+        </div>
+
+        <div class="steps">
+          <div class="steps__line" aria-hidden="true"></div>
+
+          <article class="step reveal">
+            <div class="step__num">01</div>
+            <div class="step__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0l-4 4m4-4l4 4M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Invia il progetto</h3>
+            <p>Carica i file STL, OBJ o 3MF dal form qui sotto. Non hai il modello? Ti aiutiamo noi: dalla modellazione alla scelta del materiale.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step__num">02</div>
+            <div class="step__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 7l8-4 8 4-8 4-8-4zm0 5l8 4 8-4M4 17l8 4 8-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Stampiamo per te</h3>
+            <p>Scegliamo il filamento ideale per il tuo progetto e l’orientamento migliore di stampa. Controllo qualità su ogni singolo pezzo, sempre.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step__num">03</div>
+            <div class="step__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 7h13v10H3V7zm13 3h3.5L22 13v4h-6v-7zM7 20a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm11 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Te lo spediamo</h3>
+            <p>Imballaggio protettivo su misura e spedizione tracciata in 24/48h. In tutta Italia e in tutta Europa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVIZI ===================== -->
+    <section class="section section--alt" id="servizi">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Perché Pluton Print</span>
+          <h2>Servizi pensati per<br /><span class="gradient-text">chi crea davvero.</span></h2>
+          <p>Dal maker al reparto R&amp;D: stessa cura, stessa attenzione al dettaglio.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature reveal" data-tilt>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H12l-1 8.5 8.5-11.5H12l1-8.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Prototipazione rapida</h3>
+            <p>Il tuo prototipo pronto in pochi giorni, non settimane. Itera, prova, migliora — senza aspettare una fabbrica.</p>
+          </article>
+
+          <article class="feature reveal" data-tilt>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h4v4H4V6zm6 0h4v4h-4V6zm6 0h4v4h-4V6zM4 12h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zM4 18h4v2H4v-2zm6 0h4v2h-4v-2zm6 0h4v2h-4v-2z" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h3>Piccole e medie serie</h3>
+            <p>Da 10 a 500 pezzi con costi scalabili. Produzione ripetibile con tolleranze costanti pezzo dopo pezzo.</p>
+          </article>
+
+          <article class="feature reveal" data-tilt>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 3.5v3m0 11v3M3.5 12h3m11 0h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Dettagli ad alta precisione</h3>
+            <p>Layer sottili da 0,10&nbsp;mm per superfici lisce e dettagli nitidi. Perfetta per miniature, modelli estetici e micro-componenti.</p>
+          </article>
+
+          <article class="feature reveal" data-tilt>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M14.5 4.5l5 5L9 20H4v-5L14.5 4.5zM12.5 6.5l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Finiture &amp; post-produzione</h3>
+            <p>Verniciatura, lucidatura, vapor smoothing, filettature e inserti metallici. Dal grezzo al prodotto finito.</p>
+          </article>
+
+          <article class="feature reveal" data-tilt>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 5v5l3.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Consulenza gratuita</h3>
+            <p>Analizziamo il file, suggeriamo orientamento, materiale e tecnologia per ottenere il miglior risultato al miglior prezzo.</p>
+          </article>
+
+          <article class="feature reveal" data-tilt>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7.5 3v5.5c0 4.6-3.1 8.4-7.5 9.5-4.4-1.1-7.5-4.9-7.5-9.5V6L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Riservatezza garantita</h3>
+            <p>NDA su richiesta e file cancellati dai server dopo la produzione. I tuoi progetti restano tuoi, sempre.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MATERIALI ===================== -->
+    <section class="section" id="materiali">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Materiali</span>
+          <h2>Quindici polimeri,<br /><span class="gradient-text">un solo standard.</span></h2>
+          <p>Dal PLA biodegradabile al nylon rinforzato con fibra di carbonio.</p>
+        </div>
+      </div>
+
+      <div class="marquee reveal" aria-label="Elenco materiali">
+        <div class="marquee__track">
+          <div class="marquee__group">
+            <span class="mat">PLA</span><span class="mat">PETG</span><span class="mat">ABS</span><span class="mat">ASA</span>
+            <span class="mat">TPU&nbsp;flessibile</span><span class="mat">Nylon&nbsp;PA12</span><span class="mat">PA-CF</span>
+            <span class="mat">PC</span><span class="mat">PP</span>
+            <span class="mat">HIPS</span><span class="mat">PEI&nbsp;Ultem</span><span class="mat">PLA&nbsp;matte</span><span class="mat">PLA&nbsp;metallic</span>
+          </div>
+          <div class="marquee__group" aria-hidden="true">
+            <span class="mat">PLA</span><span class="mat">PETG</span><span class="mat">ABS</span><span class="mat">ASA</span>
+            <span class="mat">TPU&nbsp;flessibile</span><span class="mat">Nylon&nbsp;PA12</span><span class="mat">PA-CF</span>
+            <span class="mat">PC</span><span class="mat">PP</span>
+            <span class="mat">HIPS</span><span class="mat">PEI&nbsp;Ultem</span><span class="mat">PLA&nbsp;matte</span><span class="mat">PLA&nbsp;metallic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="tech-grid tech-grid--single">
+          <article class="tech tech--full reveal">
+            <div class="tech__main">
+              <div class="tech__tag">FDM</div>
+              <h3>Filamento</h3>
+              <p>Ideale per prototipi funzionali, attrezzi e componenti meccanici. Parti resistenti, economiche e precisione costante, con formati di stampa fino a 300×300×300&nbsp;mm.</p>
+              <a href="#contatti" class="btn btn--primary">
+                Chiedi un preventivo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+            <ul class="tech__specs">
+              <li>
+                <span class="tech__spec-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 18h16M6 14h12M8 10h8M10 6h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </span>
+                <div><strong>Layer da 0,10 a 0,32&nbsp;mm</strong><small>Dettaglio fine o produzione veloce</small></div>
+              </li>
+              <li>
+                <span class="tech__spec-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                </span>
+                <div><strong>12+ materiali tecnici</strong><small>PLA, PETG, ABS, ASA, TPU, Nylon, PA-CF</small></div>
+              </li>
+              <li>
+                <span class="tech__spec-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h4v4H4V7zm6 0h4v4h-4V7zm6 0h4v4h-4V7zM4 13h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4z" stroke="currentColor" stroke-width="1.6"/></svg>
+                </span>
+                <div><strong>Da 1 a 500 pezzi</strong><small>Dal singolo prototipo alla piccola serie</small></div>
+              </li>
+              <li>
+                <span class="tech__spec-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </span>
+                <div><strong>Pronto in 48/72h</strong><small>Stampa e spedizione tracciata</small></div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PREZZI ===================== -->
+    <section class="section section--alt" id="prezzi">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Prezzi trasparenti</span>
+          <h2>Preventivo chiaro,<br /><span class="gradient-text">nessuna sorpresa.</span></h2>
+          <p>Il prezzo finale dipende da volume, materiale e finitura. Questi sono i punti di partenza.</p>
+        </div>
+
+        <div class="pricing">
+          <article class="price reveal">
+            <h3>Essenziale</h3>
+            <p class="price__desc">Per prototipi e pezzi singoli</p>
+            <div class="price__amount"><span>da</span> €15<em>/ pezzo</em></div>
+            <ul>
+              <li>PLA e PETG inclusi</li>
+              <li>Fino a 2 colori</li>
+              <li>Controllo qualità base</li>
+              <li>Spedizione standard</li>
+              <li>Preventivo in 24h</li>
+            </ul>
+            <a href="#contatti" class="btn btn--ghost btn--block">Richiedi ora</a>
+          </article>
+
+          <article class="price price--featured reveal">
+            <div class="price__ribbon">Più scelto</div>
+            <h3>Pro</h3>
+            <p class="price__desc">Per chi produce con continuità</p>
+            <div class="price__amount"><span>da</span> €49<em>/ ordine</em></div>
+            <ul>
+              <li>Tutti i materiali FDM</li>
+              <li>Revisione file inclusa</li>
+              <li>Priorità in coda di stampa</li>
+              <li>Spedizione express 24h</li>
+              <li>Finiture base incluse</li>
+              <li>Supporto dedicato</li>
+            </ul>
+            <a href="#contatti" class="btn btn--primary btn--block">Scegli Pro</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIANZE ===================== -->
+    <section class="section" id="recensioni">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Recensioni</span>
+          <h2>Chi ha già stampato<br /><span class="gradient-text">con Pluton Print.</span></h2>
+        </div>
+
+        <div class="testimonials">
+          <figure class="quote reveal">
+            <div class="quote__stars" aria-label="5 stelle su 5">★★★★★</div>
+            <blockquote>“Ho ricevuto il prototipo in 3 giorni, con una finitura che non mi aspettavo da un servizio online. Ora stampo da loro tutte le staffe del mio prodotto.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar">MR</span>
+              <div><strong>Marco R.</strong><small>Product designer, Milano</small></div>
+            </figcaption>
+          </figure>
+
+          <figure class="quote reveal">
+            <div class="quote__stars" aria-label="5 stelle su 5">★★★★★</div>
+            <blockquote>“Avevo un file mal fatto e me l’hanno riparato senza farmi pagare un euro in più. Il PETG è venuto perfetto per le mie miniature.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar">GB</span>
+              <div><strong>Giulia B.</strong><small>Hobbyist &amp; miniaturista</small></div>
+            </figcaption>
+          </figure>
+
+          <figure class="quote reveal">
+            <div class="quote__stars" aria-label="5 stelle su 5">★★★★★</div>
+            <blockquote>“Ordiniamo 200 pezzi al mese in PA-CF. Costanti, tracciabili, sempre in anticipo sulla data. Il NDA era un must per noi e l’hanno gestito benissimo.”</blockquote>
+            <figcaption>
+              <span class="quote__avatar">AF</span>
+              <div><strong>Andrea F.</strong><small>CTO, startup hardware</small></div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section section--alt" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <span class="eyebrow">Domande frequenti</span>
+          <h2>Tutto quello che<br /><span class="gradient-text">vuoi sapere.</span></h2>
+        </div>
+
+        <div class="faq">
+          <div class="faq__item reveal">
+            <button class="faq__q" aria-expanded="false">
+              Che formati di file accettate?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a"><div><p>Accettiamo STL, OBJ, 3MF, STEP e IGES. Se hai un file in un formato diverso, scrivici: quasi sempre possiamo convertirlo. Se non hai ancora il modello, possiamo modellarlo noi.</p></div></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__q" aria-expanded="false">
+              Quanto tempo serve per ricevere l’ordine?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a"><div><p>In media 48/72 ore dalla conferma: 24/48h di stampa e 24h di spedizione. Le serie grandi richiedono più tempo, ma ti diamo una data precisa prima di iniziare.</p></div></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__q" aria-expanded="false">
+              Come viene calcolato il prezzo?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a"><div><p>Il prezzo dipende da volume di materiale, tempo macchina, materiale scelto e finiture. Carichi il file e in 24h ricevi un preventivo dettagliato e gratuito, senza impegno.</p></div></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__q" aria-expanded="false">
+              Spedite anche all’estero?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a"><div><p>Sì, spediamo in tutta Europa con corriere tracciato. I tempi variano da 2 a 5 giorni lavorativi secondo la destinazione.</p></div></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__q" aria-expanded="false">
+              Cosa succede se il pezzo arriva danneggiato?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a"><div><p>Ristampiamo e rispediamo gratuitamente entro 14 giorni dalla consegna. Usiamo imballaggi studiati pezzo per pezzo, ma nel caso rimborsiamo o sostituiamo senza discussioni.</p></div></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__q" aria-expanded="false">
+              I miei file restano riservati?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a"><div><p>Sempre. Su richiesta firminamo un NDA prima di ricevere i file, che vengono cancellati dai nostri sistemi dopo la produzione. Non mostriamo mai i progetti dei clienti.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATTI ===================== -->
+    <section class="section" id="contatti">
+      <div class="container">
+        <div class="contact">
+          <div class="contact__info reveal">
+            <span class="eyebrow">Preventivo gratuito</span>
+            <h2>Invia il progetto.<br /><span class="gradient-text">Ci pensiamo noi.</span></h2>
+            <p>Rispondiamo entro 24 ore lavorative con preventivo, tempi e consiglio sul materiale. Nessun impegno.</p>
+
+            <ul class="contact__list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4V6zm0 0l8 7 8-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><strong>Email</strong><a href="mailto:ciao@plutonprint.it">ciao@plutonprint.it</a></div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M6.5 4h3l1.5 4-2 1.5a12 12 0 005.5 5.5L16 13l4 1.5v3a2 2 0 01-2.2 2A16 16 0 014.5 6.2 2 2 0 016.5 4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <div><strong>Telefono</strong><a href="tel:+390200000000">+39 02 0000 0000</a></div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 1114 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+                <div><strong>Lab &amp; uffici</strong><span>Via dello Spazio 12, 20100 Milano (MI)</span></div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <div><strong>Orari</strong><span>Lun–Ven, 9:00–18:00</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <form class="form reveal" id="quoteForm" novalidate>
+            <div class="form__row">
+              <div class="field">
+                <label for="nome">Nome e cognome *</label>
+                <input type="text" id="nome" name="nome" placeholder="Mario Rossi" required />
+              </div>
+              <div class="field">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="mario@azienda.it" required />
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="tipo">Tipo di progetto</label>
+                <select id="tipo" name="tipo">
+                  <option value="prototipo">Prototipo singolo</option>
+                  <option value="piccola-serie">Piccola serie (2–10 pezzi)</option>
+                  <option value="produzione">Produzione (10+ pezzi)</option>
+                  <option value="modifica">Modellazione / riparazione file</option>
+                  <option value="altro">Altro</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="materiale">Materiale (se lo sai)</label>
+                <select id="materiale" name="materiale">
+                  <option value="">Da consigliare</option>
+                  <option>PLA</option>
+                  <option>PETG</option>
+                  <option>ABS / ASA</option>
+                  <option>TPU flessibile</option>
+                  <option>Nylon / PA-CF</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="messaggio">Raccontaci il progetto *</label>
+              <textarea id="messaggio" name="messaggio" rows="5" placeholder="Dimensioni, quantità, tempi, finiture… Allegate pure i file dopo, vi risponderemo con un modellino di email per il caricamento." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--lg btn--block">
+              Invia richiesta
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="form__note">Inviando accetti di essere ricontattato. I dati non vengono ceduti a terzi.</p>
+
+            <div class="form__success" id="formSuccess" hidden>
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><strong>Richiesta inviata!</strong><span>Ti rispondiamo entro 24 ore lavorative.</span></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA FINALE ===================== -->
+    <section class="final-cta">
+      <div class="container reveal">
+        <h2>Pronto a vedere il tuo progetto<br /><span class="gradient-text">prendere vita?</span></h2>
+        <p>Carica il file, ci pensiamo noi. Preventivo gratuito in 24 ore.</p>
+        <a href="#contatti" class="btn btn--primary btn--lg">
+          Inizia ora
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#hero" class="logo">
+          <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M16 2.5l11.5 6.6v13.8L16 29.5 4.5 22.9V9.1z" stroke="url(#logoGrad)" stroke-width="1.6" fill="rgba(124,92,255,.12)"/>
+            <path d="M16 2.5v13.3m0 0l11.5-6.7M16 15.8L4.5 9.1m11.5 6.7v13.7" stroke="url(#logoGrad)" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+          <span class="logo__text">Pluton<span>Print</span></span>
+        </a>
+        <p>Il servizio di stampa 3D che porta i tuoi progetti dallo schermo alla realtà. Strato dopo strato.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Servizio</h4>
+        <a href="#come-funziona">Come funziona</a>
+        <a href="#materiali">Materiali</a>
+        <a href="#prezzi">Prezzi</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Azienda</h4>
+        <a href="#servizi">Chi siamo</a>
+        <a href="#recensioni">Recensioni</a>
+        <a href="#contatti">Contatti</a>
+        <a href="#contatti">Lavora con noi</a>
+      </div>
+
+      <!--
+      <div class="footer__col">
+        <h4>Contatti</h4>
+        <a href="mailto:ciao@plutonprint.it">ciao@plutonprint.it</a>
+        <a href="tel:+390200000000">+39 02 0000 0000</a>
+        <span>Via dello Spazio 12<br />20100 Milano (MI)</span>
+      </div>
+      -->
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© 2026 Pluton Print · Website made by PlutonX</span>
+      <div class="footer__legal">
+        <a href="#">Privacy</a>
+        <a href="#">Cookie</a>
+        <a href="#">Termini</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

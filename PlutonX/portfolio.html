@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="it" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio PlutonX — siti web, e-commerce, web app e identità visiva. Una selezione di progetti realizzati tra arte digitale e tecnologia avanzata.">
+  <meta name="theme-color" content="#04050b">
+  <title>Portfolio | PlutonX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="src/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portfolio | PlutonX">
+  <meta property="og:description" content="Progetti PlutonX — siti web, e-commerce, web app e design che lasciano il segno.">
+  <meta property="og:image" content="images/logo-animated.png">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfolio | PlutonX">
+  <meta name="twitter:description" content="Progetti PlutonX — siti web, e-commerce, web app e design che lasciano il segno.">
+  <meta name="twitter:image" content="images/logo-animated.png">
+</head>
+<body>
+
+  <!-- ══ BACKGROUND STAGE ══ -->
+  <div class="bg-stage" aria-hidden="true">
+    <canvas class="bg-canvas" id="bg-canvas"></canvas>
+    <div class="bg-aurora">
+      <span class="aurora aurora--1"></span>
+      <span class="aurora aurora--2"></span>
+      <span class="aurora aurora--3"></span>
+    </div>
+    <div class="bg-grid"></div>
+    <div class="bg-grain"></div>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <!-- ══ NAV ══ -->
+  <header class="nav" id="nav">
+    <div class="nav-shell">
+      <div class="nav-bar">
+        <a href="index.html" class="brand" aria-label="PlutonX — home">
+          <span class="brand-mark">
+            <span class="brand-orbit" aria-hidden="true"></span>
+            <img src="images/logo-animated.png" alt="" aria-hidden="true">
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">PlutonX</span>
+            <span class="brand-tag">Creative Studio</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Sezioni del sito">
+          <span class="nav-indicator" id="nav-indicator" aria-hidden="true"></span>
+          <a href="index.html" class="nav-link"><span>Home</span></a>
+          <a href="portfolio.html" class="nav-link is-active"><span>Portfolio</span></a>
+          <a href="pluton-graphics.html" class="nav-link"><span>Graphics</span></a>
+          <a href="instructions.html" class="nav-link"><span>Ordina</span></a>
+          <a href="chi-siamo.html" class="nav-link"><span>Chi Siamo</span></a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="theme-toggle" aria-label="Cambia tema" aria-pressed="false"></button>
+          <a href="instructions.html" class="nav-cta">
+            <span>Inizia un progetto</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12h14M12.5 5.8 18.7 12l-6.2 6.2"/></svg>
+          </a>
+          <button class="icon-btn nav-burger" id="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="burger" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-panel">
+      <span class="mobile-nav-label">Menu principale</span>
+      <nav class="mobile-nav-list" aria-label="Menu principale">
+        <a href="index.html"><span class="mn-num">01</span><span class="mn-text">Home</span></a>
+        <a href="portfolio.html" class="is-active"><span class="mn-num">02</span><span class="mn-text">Portfolio</span></a>
+        <a href="pluton-graphics.html"><span class="mn-num">03</span><span class="mn-text">Graphics</span></a>
+        <a href="instructions.html"><span class="mn-num">04</span><span class="mn-text">Ordina</span></a>
+        <a href="chi-siamo.html"><span class="mn-num">05</span><span class="mn-text">Chi Siamo</span></a>
+        <a href="privacy.html"><span class="mn-num">06</span><span class="mn-text">Privacy</span></a>
+      </nav>
+      <div class="mobile-nav-foot">
+        <button class="icon-btn" id="theme-toggle-mobile" aria-label="Cambia tema"></button>
+        <a href="instructions.html" class="btn btn-primary">Inizia un progetto</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+
+  <main id="page-content" class="page-content">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow reveal">
+            <span class="pulse-dot"></span> Portfolio 2026
+          </div>
+
+          <h1 data-split>
+            Il nostro <em>lavoro</em><br>
+            parla da solo
+          </h1>
+
+          <p class="hero-subtitle reveal delay-2">
+            Progetti reali, consegnati in tempi record. Dall'e-commerce alle web app,
+            ogni progetto è costruito con codice ultra-rapido e design emozionale.
+          </p>
+
+          <div class="hero-actions reveal delay-3">
+            <a href="index.html#prezzi" class="btn btn-primary">
+              Inizia un progetto <span class="btn-arrow">&rarr;</span>
+            </a>
+            <a href="pluton-graphics.html" class="btn btn-ghost">Vedi il lato Graphics</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal-scale delay-2">
+          <div class="planet">
+            <span class="planet-halo"></span>
+            <span class="planet-ring planet-ring--a"><i></i></span>
+            <span class="planet-ring planet-ring--b"><i></i></span>
+            <span class="planet-ring planet-ring--c"><i></i></span>
+            <span class="planet-core">
+              <img src="images/logo-animated.png" alt="PlutonX — portfolio di progetti web e design" class="hero-logo-animated">
+            </span>
+            <span class="planet-tag planet-tag--tl"><i class="dot"></i> 12 progetti</span>
+            <span class="planet-tag planet-tag--br"><i class="dot"></i> 48h delivery</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <span>Scorri</span>
+        <span class="cue-line"></span>
+      </div>
+    </section>
+
+    <!-- ══════════ SHOWCASE WEB ══════════ -->
+    <section class="section">
+      <div class="section-container">
+        <div class="section-head reveal">
+          <div class="section-label">Sviluppo Web</div>
+          <h2 class="section-title" data-split>Siti che <span class="accent">lasciano il segno</span></h2>
+          <p class="section-subtitle">Dall'e-commerce alle web app, ogni progetto è realizzato con tecnologia all'avanguardia e design emozionale.</p>
+        </div>
+
+        <div class="showcase-grid">
+          <a href="#" class="showcase-card-link reveal delay-1">
+            <img src="images/Gemini_Generated_Image_it85hoit85hoit85.png" alt="Nova Luxe Store - E-commerce" loading="lazy">
+            <div class="showcase-card-overlay">
+              <h3>Nova Luxe Store</h3>
+              <p>E-commerce premium con intelligenza artificiale</p>
+              <span class="btn-overlay">Vedi Progetto →</span>
+            </div>
+          </a>
+          <a href="#" class="showcase-card-link reveal delay-2">
+            <img src="images/Gemini_Generated_Image_nrnckanrnckanrnc.png" alt="Solaris Dashboard - SaaS" loading="lazy">
+            <div class="showcase-card-overlay">
+              <h3>Solaris Dashboard</h3>
+              <p>Piattaforma SaaS con analisi in tempo reale</p>
+              <span class="btn-overlay">Vedi Progetto →</span>
+            </div>
+          </a>
+          <a href="#" class="showcase-card-link reveal delay-3">
+            <img src="images/Gemini_Generated_Image_1wml1f1wml1f1wml.png" alt="Vortex Studio - Creative Agency" loading="lazy">
+            <div class="showcase-card-overlay">
+              <h3>Vortex Studio</h3>
+              <p>Sito vetrina per agenzia creativa</p>
+              <span class="btn-overlay">Vedi Progetto →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PRODUCT SHOWCASE ══════════ -->
+    <section class="section">
+      <div class="section-container">
+        <div class="showcase-block reveal">
+          <div class="showcase-block-text">
+            <div class="showcase-block-label">E-Commerce</div>
+            <h2>Nova Luxe Store</h2>
+            <p>Un'esperienza di shopping online senza precedenti. Design emozionale, raccomandazioni AI e un'interfaccia fluida che trasforma visitatori in clienti fedeli.</p>
+            <span class="tech-tag">Tecnologie: Vite + AI</span>
+          </div>
+          <div class="showcase-block-image">
+            <img src="images/Gemini_Generated_Image_it85hoit85hoit85.png" alt="Nova Luxe Store" loading="lazy">
+          </div>
+        </div>
+
+        <div class="showcase-block reveal">
+          <div class="showcase-block-text">
+            <div class="showcase-block-label">SaaS</div>
+            <h2>Solaris Dashboard</h2>
+            <p>Una piattaforma analitica potente e intuitiva. Dati complessi resi semplici attraverso visualizzazioni spettacolari e interazioni fluide.</p>
+            <span class="tech-tag">Tecnologie: React + D3</span>
+          </div>
+          <div class="showcase-block-image">
+            <img src="images/Gemini_Generated_Image_nrnckanrnckanrnc.png" alt="Solaris Dashboard" loading="lazy">
+          </div>
+        </div>
+
+        <div class="showcase-block reveal">
+          <div class="showcase-block-text">
+            <div class="showcase-block-label">Creative Agency</div>
+            <h2>Vortex Studio</h2>
+            <p>Un sito vetrina che cattura l'essenza creativa dell'agenzia. Animazioni fluide, tipografia espressiva e una narrazione visiva che emoziona.</p>
+            <span class="tech-tag">Tecnologie: GSAP + Three.js</span>
+          </div>
+          <div class="showcase-block-image">
+            <img src="images/Gemini_Generated_Image_1wml1f1wml1f1wml.png" alt="Vortex Studio" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ GRAPHICS PORTFOLIO ══════════ -->
+    <section class="section">
+      <div class="section-container">
+        <div class="section-head reveal">
+          <div class="section-label">Design Grafico</div>
+          <h2 class="section-title" data-split>Visual che <span class="accent">parlano al cuore</span></h2>
+          <p class="section-subtitle">Brand identity, content creation e motion graphics per distinguerti in un mercato affollato.</p>
+        </div>
+
+        <div class="showcase-grid">
+          <a href="pluton-graphics.html" class="showcase-card-link reveal delay-1">
+            <img src="images/Gemini_Generated_Image_d7dzsvd7dzsvd7dz.png" alt="CTR Dominator - Thumbnail Pack" loading="lazy">
+            <div class="showcase-card-overlay">
+              <h3>CTR Dominator Pack</h3>
+              <p>Miniature YouTube ad alto tasso di clic</p>
+              <span class="btn-overlay">Vedi Progetto →</span>
+            </div>
+          </a>
+          <a href="pluton-graphics.html" class="showcase-card-link reveal delay-2">
+            <img src="images/Gemini_Generated_Image_nmlzrgnmlzrgnmlz.png" alt="Brand Glow Kit - Branding" loading="lazy">
+            <div class="showcase-card-overlay">
+              <h3>Brand Glow Kit</h3>
+              <p>Brand identity completa per creator digitali</p>
+              <span class="btn-overlay">Vedi Progetto →</span>
+            </div>
+          </a>
+          <a href="pluton-graphics.html" class="showcase-card-link reveal delay-3">
+            <img src="images/Gemini_Generated_Image_vmd57bvmd57bvmd5.png" alt="Elite Ads Assets - Motion" loading="lazy">
+            <div class="showcase-card-overlay">
+              <h3>Elite Ads Assets</h3>
+              <p>Motion graphics per campagne pubblicitarie</p>
+              <span class="btn-overlay">Vedi Progetto →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ CTA ══════════ -->
+    <section class="cta-section">
+      <div class="cta-panel reveal">
+        <h2 data-split>Il tuo progetto potrebbe essere il <span class="accent">prossimo</span></h2>
+        <p>Raccontaci la tua idea e trasformeremo la tua visione in un capolavoro digitale.</p>
+        <div class="hero-actions">
+          <a href="index.html#prezzi" class="btn btn-primary">Inizia ora <span class="btn-arrow">&rarr;</span></a>
+          <a href="mailto:info@plutonx.com" class="btn btn-ghost">Parlane con noi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <span class="brand-mark"><img src="images/logo-animated.png" alt="" aria-hidden="true"></span>
+          <span class="brand-name">PlutonX</span>
+        </a>
+        <p>Soluzioni digitali premium che uniscono design emozionale, intelligenza artificiale e artigianalità codificata.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Siti Web</h4>
+        <a href="index.html#prezzi">Pluton Express</a>
+        <a href="index.html#prezzi">Pluton Restyling</a>
+        <a href="index.html#prezzi">Pluton Advanced</a>
+        <a href="index.html#servizi-grafica">Grafica Basic</a>
+        <a href="index.html#servizi-grafica">Social Pack</a>
+        <a href="index.html#servizi-grafica">Premium Brand</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Compagnia</h4>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="instructions.html">Ordina</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <a href="mailto:info@plutonx.com">info@plutonx.com</a>
+        <a href="privacy.html">Termini &amp; Condizioni</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 PlutonX. Tutti i diritti riservati.</span>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+        </a>
+        <a href="mailto:info@plutonx.com" aria-label="Email">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

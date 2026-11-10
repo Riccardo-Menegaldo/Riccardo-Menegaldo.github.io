@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="it" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ordina il tuo progetto PlutonX — pacchetti web e grafica, processo in 3 passi, prezzi trasparenti e nessuna sorpresa.">
+  <meta name="theme-color" content="#04050b">
+  <title>Ordina | PlutonX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="src/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ordina | PlutonX">
+  <meta property="og:description" content="Pacchetti web e grafica PlutonX — processo in 3 passi, prezzi trasparenti e nessuna sorpresa.">
+  <meta property="og:image" content="images/logo-animated.png">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ordina | PlutonX">
+  <meta name="twitter:description" content="Pacchetti web e grafica PlutonX — processo in 3 passi, prezzi trasparenti.">
+  <meta name="twitter:image" content="images/logo-animated.png">
+</head>
+<body>
+
+  <!-- ══ BACKGROUND STAGE ══ -->
+  <div class="bg-stage" aria-hidden="true">
+    <canvas class="bg-canvas" id="bg-canvas"></canvas>
+    <div class="bg-aurora">
+      <span class="aurora aurora--1"></span>
+      <span class="aurora aurora--2"></span>
+      <span class="aurora aurora--3"></span>
+    </div>
+    <div class="bg-grid"></div>
+    <div class="bg-grain"></div>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <!-- ══ NAV ══ -->
+  <header class="nav" id="nav">
+    <div class="nav-shell">
+      <div class="nav-bar">
+        <a href="index.html" class="brand" aria-label="PlutonX — home">
+          <span class="brand-mark">
+            <span class="brand-orbit" aria-hidden="true"></span>
+            <img src="images/logo-animated.png" alt="" aria-hidden="true">
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">PlutonX</span>
+            <span class="brand-tag">Creative Studio</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Sezioni del sito">
+          <span class="nav-indicator" id="nav-indicator" aria-hidden="true"></span>
+          <a href="index.html" class="nav-link"><span>Home</span></a>
+          <a href="portfolio.html" class="nav-link"><span>Portfolio</span></a>
+          <a href="pluton-graphics.html" class="nav-link"><span>Graphics</span></a>
+          <a href="instructions.html" class="nav-link is-active"><span>Ordina</span></a>
+          <a href="chi-siamo.html" class="nav-link"><span>Chi Siamo</span></a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="theme-toggle" aria-label="Cambia tema" aria-pressed="false"></button>
+          <a href="mailto:info@plutonx.com" class="nav-cta">
+            <span>Inizia un progetto</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12h14M12.5 5.8 18.7 12l-6.2 6.2"/></svg>
+          </a>
+          <button class="icon-btn nav-burger" id="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="burger" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-panel">
+      <span class="mobile-nav-label">Menu principale</span>
+      <nav class="mobile-nav-list" aria-label="Menu principale">
+        <a href="index.html"><span class="mn-num">01</span><span class="mn-text">Home</span></a>
+        <a href="portfolio.html"><span class="mn-num">02</span><span class="mn-text">Portfolio</span></a>
+        <a href="pluton-graphics.html"><span class="mn-num">03</span><span class="mn-text">Graphics</span></a>
+        <a href="instructions.html" class="is-active"><span class="mn-num">04</span><span class="mn-text">Ordina</span></a>
+        <a href="chi-siamo.html"><span class="mn-num">05</span><span class="mn-text">Chi Siamo</span></a>
+        <a href="privacy.html"><span class="mn-num">06</span><span class="mn-text">Privacy</span></a>
+      </nav>
+      <div class="mobile-nav-foot">
+        <button class="icon-btn" id="theme-toggle-mobile" aria-label="Cambia tema"></button>
+        <a href="mailto:info@plutonx.com" class="btn btn-primary">Inizia un progetto</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+
+  <main id="page-content" class="page-content">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow reveal">
+            <span class="pulse-dot"></span> Ordina
+          </div>
+
+          <h1 data-split>
+            Il tuo progetto in<br>
+            <em>3 semplici passi</em>
+          </h1>
+
+          <p class="hero-subtitle reveal delay-2">
+            Dalla tua idea al risultato finale. Un processo trasparente, veloce e senza sorprese.
+            Ecco come funziona.
+          </p>
+
+          <div class="hero-actions reveal delay-3">
+            <a href="#prezzi-web" class="btn btn-primary">
+              Vedi i pacchetti <span class="btn-arrow">&rarr;</span>
+            </a>
+            <a href="mailto:info@plutonx.com" class="btn btn-ghost">Prenota una consulenza</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal-scale delay-2">
+          <div class="planet">
+            <span class="planet-halo"></span>
+            <span class="planet-ring planet-ring--a"><i></i></span>
+            <span class="planet-ring planet-ring--b"><i></i></span>
+            <span class="planet-ring planet-ring--c"><i></i></span>
+            <span class="planet-core">
+              <img src="images/logo-animated.png" alt="PlutonX — ordina il tuo progetto in 3 passi" class="hero-logo-animated">
+            </span>
+            <span class="planet-tag planet-tag--tl"><i class="dot"></i> Consulenza</span>
+            <span class="planet-tag planet-tag--br"><i class="dot"></i> Bozza</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <span>Scorri</span>
+        <span class="cue-line"></span>
+      </div>
+    </section>
+
+    <!-- ══════════ STEPS ══════════ -->
+    <section class="section">
+      <div class="section-container">
+        <div class="section-head reveal">
+          <div class="section-label">Processo</div>
+          <h2 class="section-title" data-split>Dal concept <span class="accent">alla consegna</span></h2>
+          <p class="section-subtitle">Tre passi semplici e trasparenti per trasformare la tua idea in realtà digitale. Scegli il piano, raccontaci la tua idea e ricevi il tuo progetto pronto.</p>
+        </div>
+
+        <div class="process">
+          <div class="process-track"><span></span></div>
+
+          <div class="process-step reveal delay-1">
+            <span class="step-dot"></span>
+            <span class="process-index">01</span>
+            <h3>Raccontaci la tua idea</h3>
+            <p>Scrivici una email a <strong>info@plutonx.com</strong> con la tua richiesta. Ti risponderemo entro poche ore per fissare una consulenza gratuita.</p>
+          </div>
+
+          <div class="process-step reveal delay-2">
+            <span class="step-dot"></span>
+            <span class="process-index">02</span>
+            <h3>Ricevi la tua bozza</h3>
+            <p>Dopo la consulenza, realizzeremo una bozza dettagliata del progetto. Potrai richiedere modifiche fino a quando non sarai completamente soddisfatto.</p>
+          </div>
+
+          <div class="process-step reveal delay-3">
+            <span class="step-dot"></span>
+            <span class="process-index">03</span>
+            <h3>Approvazione e lancio</h3>
+            <p>Una volta approvata la bozza e ricevuto il pagamento, pubblicheremo il tuo progetto e ti forniremo supporto continuo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PLANS WEB ══════════ -->
+    <section class="section" id="prezzi-web">
+      <div class="section-container">
+        <div class="section-head reveal">
+          <div class="section-label">Pacchetti Web</div>
+          <h2 class="section-title" data-split>Siti web e sviluppo <span class="accent">su misura</span></h2>
+          <p class="section-subtitle">Siti sviluppati con codice di ultima generazione, ospitati sui server ultra-rapidi Vercel e con ottimizzazione SEO di base per essere trovati su Google.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card glass-card reveal delay-1">
+            <div class="pricing-name">Pluton Express</div>
+            <div class="pricing-price">€1.490 <span>una tantum</span></div>
+            <div class="pricing-recurring">+ €50 / mese</div>
+            <p class="pricing-desc">Il sito vetrina definitivo per professionisti.</p>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span> Fino a 5 pagine personalizzate</li>
+              <li><span class="check">✓</span> Ottimizzazione SEO di base e indicizzazione su Google</li>
+              <li><span class="check">✓</span> Configurazione della scheda Google My Business</li>
+              <li><span class="check">✓</span> Cartella Google Drive dedicata per la gestione dei materiali</li>
+            </ul>
+            <a href="mailto:info@plutonx.com?subject=Richiesta%20Pluton%20Express" class="btn btn-primary">Prenota Ora</a>
+            <small class="terms-note">* Si applicano i Termini e Condizioni</small>
+          </article>
+
+          <article class="pricing-card glass-card is-featured reveal delay-2">
+            <div class="pricing-name">Pluton Restyling</div>
+            <div class="pricing-price">€1.990 <span>una tantum</span></div>
+            <div class="pricing-recurring">+ €50 / mese</div>
+            <p class="pricing-desc">Rifacimento completo del tuo sito.</p>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span> Rifacimento completo del look e del codice del sito</li>
+              <li><span class="check">✓</span> Mantenimento del vecchio posizionamento Google</li>
+              <li><span class="check">✓</span> Velocità di caricamento triplicata</li>
+              <li><span class="check">✓</span> Adeguamento ai moderni standard di sicurezza</li>
+            </ul>
+            <a href="mailto:info@plutonx.com?subject=Richiesta%20Pluton%20Restyling" class="btn btn-primary">Prenota Ora</a>
+            <small class="terms-note">* Si applicano i Termini e Condizioni</small>
+          </article>
+
+          <article class="pricing-card glass-card reveal delay-3">
+            <div class="pricing-name">Pluton Advanced</div>
+            <div class="pricing-price">Da €6.900 <span>una tantum</span></div>
+            <div class="pricing-recurring">+ €119 / mese</div>
+            <p class="pricing-desc">E-commerce e piattaforme dinamiche.</p>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span> Sito e-commerce o piattaforma dinamica complessa</li>
+              <li><span class="check">✓</span> Integrazione sistemi di pagamento sicuri (Stripe, PayPal, Carte)</li>
+              <li><span class="check">✓</span> Database Serverless (Supabase) conforme GDPR europeo</li>
+              <li><span class="check">✓</span> SEO avanzata per schede prodotto e automazione del catalogo</li>
+            </ul>
+            <a href="mailto:info@plutonx.com?subject=Richiesta%20Pluton%20Advanced" class="btn btn-primary">Richiedi Preventivo</a>
+            <small class="terms-note">* Si applicano i Termini e Condizioni</small>
+          </article>
+
+          <article class="pricing-card glass-card reveal delay-4">
+            <div class="pricing-name">SEO Boost</div>
+            <div class="pricing-price">€890 <span>una tantum</span></div>
+            <p class="pricing-desc">Posizionamento su Google del tuo sito esistente.</p>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span> Analisi tecnica approfondita del sito e dei competitor</li>
+              <li><span class="check">✓</span> Ricerca e selezione delle parole chiave più profittevoli</li>
+              <li><span class="check">✓</span> Riscrittura dei testi chiave in ottica SEO</li>
+              <li><span class="check">✓</span> Ottimizzazione delle performance di caricamento (Core Web Vitals)</li>
+            </ul>
+            <a href="mailto:info@plutonx.com?subject=Richiesta%20SEO%20Boost" class="btn btn-primary">Prenota Ora</a>
+            <small class="terms-note">* Si applicano i Termini e Condizioni</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PLANS GRAPHICS ══════════ -->
+    <section class="section" id="prezzi-grafica">
+      <div class="section-container">
+        <div class="section-head reveal">
+          <div class="section-label">Pacchetti Grafica</div>
+          <h2 class="section-title" data-split>Design e grafica <span class="accent">on-demand</span></h2>
+          <p class="section-subtitle">Gestione snella tramite la tua cartella Google Drive dedicata. Tu carichi la richiesta, noi ti consegniamo il file pronto all'uso.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card glass-card reveal delay-1">
+            <div class="pricing-name">Grafica Basic</div>
+            <div class="pricing-price">€90 <span>a singola grafica</span></div>
+            <p class="pricing-desc">Post social, storia o locandina veloce.</p>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span> Consegna rapida</li>
+              <li><span class="check">✓</span> 0 revisioni incluse (se cambi idea si acquista una nuova)</li>
+              <li><span class="check">✓</span> Pronta all'uso</li>
+            </ul>
+            <a href="mailto:info@plutonx.com?subject=Richiesta%20Grafica%20Basic" class="btn btn-primary">Ordina Ora</a>
+            <small class="terms-note">* Si applicano i Termini e Condizioni</small>
+          </article>
+
+          <article class="pricing-card glass-card is-featured reveal delay-2">
+            <div class="pricing-name">Social Pack</div>
+            <div class="pricing-price">€350 <span>a pacchetto</span></div>
+            <p class="pricing-desc">Pacchetto di grafiche coordinate per social.</p>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span> 4 grafiche coordinate incluse</li>
+              <li><span class="check">✓</span> Max 3 revisioni complessive incluse</li>
+              <li><span class="check">✓</span> Perfetto per campagne pubblicitarie</li>
+            </ul>
+            <a href="mailto:info@plutonx.com?subject=Richiesta%20Social%20Pack" class="btn btn-primary">Ordina Ora</a>
+            <small class="terms-note">* Si applicano i Termini e Condizioni</small>
+          </article>
+
+          <article class="pricing-card glass-card reveal delay-3">
+            <div class="pricing-name">Premium Brand</div>
+            <div class="pricing-price">€990 <span>a progetto</span></div>
+            <p class="pricing-desc">Progetti grafici complessi ad alto impatto.</p>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span> Cataloghi aziendali completi, restyling del Logo</li>
+              <li><span class="check">✓</span> Intera Brand Identity o insegne</li>
+              <li><span class="check">✓</span> Max 5 revisioni incluse per la perfezione</li>
+            </ul>
+            <a href="mailto:info@plutonx.com?subject=Richiesta%20Premium%20Brand" class="btn btn-primary">Richiedi Preventivo</a>
+            <small class="terms-note">* Si applicano i Termini e Condizioni</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ DISCLAIMER ══════════ -->
+    <section class="section">
+      <div class="section-container">
+        <div class="glass-card reveal" style="padding:34px 40px;text-align:center;">
+          <p style="font-size:.92rem;color:var(--text-2);line-height:1.75;">
+            <strong style="color:var(--text-1);">Nota bene:</strong> I prezzi indicati sono puramente indicativi e
+            possono variare in base alla complessità del progetto. Contattaci per un preventivo personalizzato
+            e senza impegno.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ CTA ══════════ -->
+    <section class="cta-section">
+      <div class="cta-panel reveal">
+        <h2 data-split>Pronto a iniziare il <span class="accent">tuo progetto</span>?</h2>
+        <p>Scegli il piano che fa per te. Attiva subito il tuo abbonamento senza impegno.</p>
+        <div class="hero-actions">
+          <a href="mailto:info@plutonx.com" class="btn btn-primary">Prenota il tuo piano <span class="btn-arrow">&rarr;</span></a>
+          <a href="mailto:info@plutonx.com" class="btn btn-ghost">Parlane con noi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <span class="brand-mark"><img src="images/logo-animated.png" alt="" aria-hidden="true"></span>
+          <span class="brand-name">PlutonX</span>
+        </a>
+        <p>Soluzioni digitali premium che uniscono design emozionale, intelligenza artificiale e artigianalità codificata.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Siti Web</h4>
+        <a href="index.html#prezzi">Pluton Express</a>
+        <a href="index.html#prezzi">Pluton Restyling</a>
+        <a href="index.html#prezzi">Pluton Advanced</a>
+        <a href="index.html#servizi-grafica">Grafica Basic</a>
+        <a href="index.html#servizi-grafica">Social Pack</a>
+        <a href="index.html#servizi-grafica">Premium Brand</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Compagnia</h4>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="instructions.html">Ordina</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <a href="mailto:info@plutonx.com">info@plutonx.com</a>
+        <a href="privacy.html">Termini &amp; Condizioni</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 PlutonX. Tutti i diritti riservati.</span>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+        </a>
+        <a href="mailto:info@plutonx.com" aria-label="Email">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

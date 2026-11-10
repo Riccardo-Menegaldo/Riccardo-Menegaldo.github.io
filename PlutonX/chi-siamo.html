@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="it" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chi siamo — PlutonX nasce dalla fusione tra arte digitale e tecnologia avanzata. Design emozionale, tecnologia senza limiti.">
+  <meta name="theme-color" content="#04050b">
+  <title>Chi Siamo | PlutonX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="src/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chi Siamo | PlutonX">
+  <meta property="og:description" content="PlutonX nasce dalla fusione tra arte digitale e tecnologia avanzata. Ogni progetto è un capolavoro.">
+  <meta property="og:image" content="images/logo-animated.png">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chi Siamo | PlutonX">
+  <meta name="twitter:description" content="PlutonX nasce dalla fusione tra arte digitale e tecnologia avanzata.">
+  <meta name="twitter:image" content="images/logo-animated.png">
+</head>
+<body>
+
+  <!-- ══ BACKGROUND STAGE ══ -->
+  <div class="bg-stage" aria-hidden="true">
+    <canvas class="bg-canvas" id="bg-canvas"></canvas>
+    <div class="bg-aurora">
+      <span class="aurora aurora--1"></span>
+      <span class="aurora aurora--2"></span>
+      <span class="aurora aurora--3"></span>
+    </div>
+    <div class="bg-grid"></div>
+    <div class="bg-grain"></div>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <!-- ══ NAV ══ -->
+  <header class="nav" id="nav">
+    <div class="nav-shell">
+      <div class="nav-bar">
+        <a href="index.html" class="brand" aria-label="PlutonX — home">
+          <span class="brand-mark">
+            <span class="brand-orbit" aria-hidden="true"></span>
+            <img src="images/logo-animated.png" alt="" aria-hidden="true">
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">PlutonX</span>
+            <span class="brand-tag">Creative Studio</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Sezioni del sito">
+          <span class="nav-indicator" id="nav-indicator" aria-hidden="true"></span>
+          <a href="index.html" class="nav-link"><span>Home</span></a>
+          <a href="portfolio.html" class="nav-link"><span>Portfolio</span></a>
+          <a href="pluton-graphics.html" class="nav-link"><span>Graphics</span></a>
+          <a href="instructions.html" class="nav-link"><span>Ordina</span></a>
+          <a href="chi-siamo.html" class="nav-link is-active"><span>Chi Siamo</span></a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="theme-toggle" aria-label="Cambia tema" aria-pressed="false"></button>
+          <a href="instructions.html" class="nav-cta">
+            <span>Inizia un progetto</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12h14M12.5 5.8 18.7 12l-6.2 6.2"/></svg>
+          </a>
+          <button class="icon-btn nav-burger" id="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="burger" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-panel">
+      <span class="mobile-nav-label">Menu principale</span>
+      <nav class="mobile-nav-list" aria-label="Menu principale">
+        <a href="index.html"><span class="mn-num">01</span><span class="mn-text">Home</span></a>
+        <a href="portfolio.html"><span class="mn-num">02</span><span class="mn-text">Portfolio</span></a>
+        <a href="pluton-graphics.html"><span class="mn-num">03</span><span class="mn-text">Graphics</span></a>
+        <a href="instructions.html"><span class="mn-num">04</span><span class="mn-text">Ordina</span></a>
+        <a href="chi-siamo.html" class="is-active"><span class="mn-num">05</span><span class="mn-text">Chi Siamo</span></a>
+        <a href="privacy.html"><span class="mn-num">06</span><span class="mn-text">Privacy</span></a>
+      </nav>
+      <div class="mobile-nav-foot">
+        <button class="icon-btn" id="theme-toggle-mobile" aria-label="Cambia tema"></button>
+        <a href="instructions.html" class="btn btn-primary">Inizia un progetto</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+
+  <main id="page-content" class="page-content">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow reveal">
+            <span class="pulse-dot"></span> Chi Siamo
+          </div>
+
+          <h1 data-split>
+            La nostra storia,<br>
+            la tua <em>eccellenza</em>
+          </h1>
+
+          <p class="hero-subtitle reveal delay-2">
+            PlutonX nasce dalla fusione tra arte digitale e tecnologia avanzata.
+            Ogni progetto è un capolavoro realizzato con passione e precisione.
+          </p>
+
+          <div class="hero-actions reveal delay-3">
+            <a href="index.html#prezzi" class="btn btn-primary">
+              Lavoriamo insieme <span class="btn-arrow">&rarr;</span>
+            </a>
+            <a href="portfolio.html" class="btn btn-ghost">Guarda i progetti</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal-scale delay-2">
+          <div class="planet">
+            <span class="planet-halo"></span>
+            <span class="planet-ring planet-ring--a"><i></i></span>
+            <span class="planet-ring planet-ring--b"><i></i></span>
+            <span class="planet-ring planet-ring--c"><i></i></span>
+            <span class="planet-core">
+              <img src="images/logo-animated.png" alt="PlutonX — design emozionale e tecnologia all'avanguardia" class="hero-logo-animated">
+            </span>
+            <span class="planet-tag planet-tag--tl"><i class="dot"></i> Arte digitale</span>
+            <span class="planet-tag planet-tag--br"><i class="dot"></i> Tecnologia</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <span>Scorri</span>
+        <span class="cue-line"></span>
+      </div>
+    </section>
+
+    <!-- ══════════ STORY ══════════ -->
+    <section class="section">
+      <div class="section-container">
+        <div class="about-panel glass-card reveal">
+          <div class="about-emblem">
+            <div class="emblem-ring">
+              <img src="images/logo-animated.png" alt="PlutonX — Design emozionale e tecnologia all'avanguardia">
+            </div>
+            <h3>PlutonX</h3>
+          </div>
+          <div>
+            <h2 class="section-title" data-split>Design emozionale, tecnologia <span class="accent">senza limiti</span></h2>
+            <p style="font-size:.97rem;line-height:1.78;color:var(--text-2);margin-bottom:14px;">
+              PlutonX è nata dalla visione di creare esperienze digitali che emozionano. Non costruiamo
+              semplicemente siti web — creiamo opere d'arte interattive che raccontano storie e trasformano
+              visitatori in clienti fedeli.
+            </p>
+            <p style="font-size:.97rem;line-height:1.78;color:var(--text-2);margin-bottom:24px;">
+              Ogni linea di codice è scritta con cura, ogni pixel è posizionato con intenzione, ogni
+              interazione è progettata per stupire. Questo è ciò che chiamiamo "design emozionale" — e questo
+              è ciò che portiamo in ogni progetto.
+            </p>
+            <a href="index.html#prezzi" class="btn btn-ghost">Scopri i piani <span class="btn-arrow">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ VALUES ══════════ -->
+    <section class="section">
+      <div class="section-container">
+        <div class="section-head reveal">
+          <div class="section-label">Valori</div>
+          <h2 class="section-title" data-split>Ciò in cui <span class="accent">crediamo</span></h2>
+          <p class="section-subtitle">I principi che guidano ogni nostra decisione e ogni progetto che realizziamo.</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card glass-card reveal delay-1">
+            <div class="value-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Velocità</h3>
+            <p>Tempi di consegna rapidi senza compromettere la qualità. Il tuo progetto è pronto quando ne hai bisogno.</p>
+          </div>
+          <div class="value-card glass-card reveal delay-2">
+            <div class="value-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3>Qualità</h3>
+            <p>Standard qualitativi rigorosi. Ogni progetto è testato, ottimizzato e perfezionato fino alla perfezione.</p>
+          </div>
+          <div class="value-card glass-card reveal delay-3">
+            <div class="value-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3>Design Estremo</h3>
+            <p>Spingiamo i confini del design per creare esperienze che lasciano senza fiato. Il bello è solo l'inizio.</p>
+          </div>
+          <div class="value-card glass-card reveal delay-4">
+            <div class="value-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3>Assistenza Reale</h3>
+            <p>Supporto umano, non automatizzato. Siamo sempre qui per te, con risposte veloci e soluzioni concrete.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PLANS ══════════ -->
+    <section class="section">
+      <div class="section-container">
+        <div class="section-head reveal">
+          <div class="section-label">Piani Web</div>
+          <h2 class="section-title" data-split>Siti web e sviluppo <span class="accent">su misura</span></h2>
+          <p class="section-subtitle">Dal sito vetrina al funnel di vendita, ogni piano è progettato per darti risultati concreti.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card glass-card reveal delay-1">
+            <div class="service-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Pluton Express</h3>
+            <p>Il sito vetrina definitivo per professionisti e attività locali. Progettato su misura, ultra-veloce e ottimizzato al 100% per smartphone.</p>
+            <span class="tech-tag">Da €1.490 una tantum</span>
+          </article>
+          <article class="service-card glass-card reveal delay-2">
+            <div class="service-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Pluton Restyling</h3>
+            <p>Hai un sito vecchio, lento o che non rappresenta più la tua azienda? Lo ricostruiamo da zero in chiave moderna, senza farti perdere clienti.</p>
+            <span class="tech-tag">Da €1.990 una tantum</span>
+          </article>
+          <article class="service-card glass-card reveal delay-3">
+            <div class="service-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Pluton Advanced</h3>
+            <p>La soluzione per business che hanno bisogno di fare sul serio. E-commerce, piattaforme dinamiche o web-app su misura con database dedicati.</p>
+            <span class="tech-tag">Da €6.900 una tantum</span>
+          </article>
+          <article class="service-card glass-card reveal delay-4">
+            <div class="service-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="12" r="2"/><circle cx="14" cy="8" r="2"/><circle cx="14" cy="16" r="2"/><path d="M6 12h4"/><path d="M14 8h4"/><path d="M14 16h4"/><path d="M10 12h4"/></svg>
+            </div>
+            <h3>SEO Boost</h3>
+            <p>Trasforma il tuo sito invisibile in una calamita di clienti su Google. Audit, keyword e ottimizzazione on-page.</p>
+            <span class="tech-tag">€890 una tantum</span>
+          </article>
+        </div>
+
+        <div class="section-head reveal" style="margin-top:64px;">
+          <div class="section-label">Piani Grafica</div>
+          <h2 class="section-title" data-split>Design e identità <span class="accent">visiva premium</span></h2>
+          <p class="section-subtitle">Dal logo al rebranding completo, ogni piano è pensato per far brillare il tuo brand.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card glass-card reveal delay-1">
+            <div class="service-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <h3>Grafica Basic</h3>
+            <p>Post veloce per i social, storia o locandina per un evento al volo. Consegna rapida, 0 revisioni incluse.</p>
+            <span class="tech-tag">€90 a grafica</span>
+          </article>
+          <article class="service-card glass-card reveal delay-2">
+            <div class="service-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Social Pack</h3>
+            <p>Il pacchetto perfetto per le aziende che vogliono pianificare la comunicazione digitale con grafica coerente e professionale. Max 3 revisioni incluse.</p>
+            <span class="tech-tag">€350 a pacchetto</span>
+          </article>
+          <article class="service-card glass-card reveal delay-3">
+            <div class="service-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <h3>Premium Brand</h3>
+            <p>Progetti grafici complessi e ad alto impatto visivo che richiedono uno studio strategico profondo della tua identità aziendale. Max 5 revisioni incluse.</p>
+            <span class="tech-tag">€990 a progetto</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ BELIEFS ══════════ -->
+    <section class="section">
+      <div class="section-container">
+        <div class="section-head reveal">
+          <div class="section-label">Filosofia</div>
+          <h2 class="section-title" data-split>I pilastri del <span class="accent">nostro lavoro</span></h2>
+          <p class="section-subtitle">Quattro valori fondamentali che definiscono chi siamo e come lavoriamo.</p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card glass-card reveal delay-1">
+            <div class="step-number">01</div>
+            <h3>Trasparenza</h3>
+            <p>Niente sorprese, niente costi nascosti. Comunicazione chiara e onesta in ogni fase del progetto.</p>
+          </article>
+          <article class="step-card glass-card reveal delay-2">
+            <div class="step-number">02</div>
+            <h3>Eccellenza</h3>
+            <p>Non ci accontentiamo del "buono". Ogni progetto deve essere il migliore possibile, punto.</p>
+          </article>
+          <article class="step-card glass-card reveal delay-3">
+            <div class="step-number">03</div>
+            <h3>Innovazione</h3>
+            <p>Sperimentiamo costantemente nuove tecnologie e approcci per offrirti sempre il meglio.</p>
+          </article>
+          <article class="step-card glass-card reveal delay-4">
+            <div class="step-number">04</div>
+            <h3>Passione</h3>
+            <p>Facciamo questo lavoro perché lo amiamo. E si vede in ogni pixel, in ogni riga di codice.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ CTA ══════════ -->
+    <section class="cta-section">
+      <div class="cta-panel reveal">
+        <h2 data-split>Entra a far parte della <span class="accent">storia PlutonX</span></h2>
+        <p>Il tuo progetto è il prossimo capitolo. Scriviamolo insieme.</p>
+        <div class="hero-actions">
+          <a href="index.html#prezzi" class="btn btn-primary">Inizia ora <span class="btn-arrow">&rarr;</span></a>
+          <a href="mailto:info@plutonx.com" class="btn btn-ghost">Parlane con noi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <span class="brand-mark"><img src="images/logo-animated.png" alt="" aria-hidden="true"></span>
+          <span class="brand-name">PlutonX</span>
+        </a>
+        <p>Soluzioni digitali premium che uniscono design emozionale, intelligenza artificiale e artigianalità codificata.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Siti Web</h4>
+        <a href="index.html#prezzi">Pluton Express</a>
+        <a href="index.html#prezzi">Pluton Restyling</a>
+        <a href="index.html#prezzi">Pluton Advanced</a>
+        <a href="index.html#servizi-grafica">Grafica Basic</a>
+        <a href="index.html#servizi-grafica">Social Pack</a>
+        <a href="index.html#servizi-grafica">Premium Brand</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Compagnia</h4>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="instructions.html">Ordina</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <a href="mailto:info@plutonx.com">info@plutonx.com</a>
+        <a href="privacy.html">Termini &amp; Condizioni</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 PlutonX. Tutti i diritti riservati.</span>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+        </a>
+        <a href="mailto:info@plutonx.com" aria-label="Email">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Viewport bloccato: niente zoom accidentale durante il gioco, supporto notch -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#100A25">
+  <meta name="description" content="NEON BLOCKS: NEON SHIFT — arcade platform 2D con meccanica di cambio energia. Offline, HTML5 Canvas.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <title>NEON BLOCKS — NEON SHIFT</title>
+
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='15' y='15' width='70' height='70' rx='16' fill='%238D48FF'/><circle cx='38' cy='45' r='9' fill='%2335EAFF'/><circle cx='64' cy='45' r='9' fill='%2335EAFF'/></svg>">
+</head>
+<body>
+  <!-- Contenitore principale -->
+  <div id="app">
+    <!-- Canvas di gioco -->
+    <canvas id="game"></canvas>
+
+    <!-- ================= HUD (durante il gioco) ================= -->
+    <div id="hud" class="hud hidden">
+      <div class="hud-left">
+        <div class="hud-chip"><span class="hud-label">PUNTI</span><span id="hud-score">0</span></div>
+        <div class="hud-chip"><span class="hud-label">MONETE</span><span id="hud-coins">0</span></div>
+        <div class="hud-chip"><span class="hud-label">VITE</span><span id="hud-lives">♥♥♥</span></div>
+      </div>
+
+      <!-- Indicatore energia: toccabile per cambiare energia -->
+      <button id="energy-indicator" class="energy-indicator" aria-label="Cambia energia (SHIFT)">
+        <span id="energy-dots" class="energy-dots">
+          <i data-e="cyber"></i><i data-e="plasma"></i><i data-e="nova"></i>
+        </span>
+        <span id="energy-name" class="energy-name">CYBER</span>
+        <span class="energy-key">SHIFT</span>
+      </button>
+
+      <div class="hud-right">
+        <button id="btn-pause" class="icon-btn" aria-label="Pausa">II</button>
+      </div>
+    </div>
+
+    <!-- ================= CONTROLLI TOUCH ================= -->
+    <div id="touch-controls" class="touch-controls hidden" aria-hidden="true">
+      <div class="tc-side tc-left">
+        <button class="tc-btn" data-input="left" aria-label="Sinistra">&#9664;</button>
+        <button class="tc-btn" data-input="right" aria-label="Destra">&#9654;</button>
+      </div>
+      <div class="tc-side tc-right">
+        <button class="tc-btn tc-shift" data-input="shift" aria-label="Cambia energia">SHIFT</button>
+        <button class="tc-btn tc-jump" data-input="jump" aria-label="Salta">&#9650;</button>
+      </div>
+    </div>
+
+    <!-- ================= SCHERMATE ================= -->
+
+    <!-- Splash / avvio -->
+    <section id="screen-splash" class="screen active">
+      <div class="splash-inner">
+        <div class="logo logo-big" aria-label="NEON BLOCKS">
+          <span>N</span><span>E</span><span>O</span><span>N</span><span class="logo-space">&#160;</span><span>B</span><span>L</span><span>O</span><span>C</span><span>K</span><span>S</span>
+        </div>
+        <div class="logo-sub">NEON SHIFT</div>
+        <button id="btn-start" class="btn btn-primary btn-glow">TOCCA PER INIZIARE</button>
+        <p class="hint">Piattaforme + energia: CYBER · PLASMA · NOVA</p>
+      </div>
+      <div class="version">v1.0 — offline</div>
+      <div class="copyright">Copyright Pluton Games R.M</div>
+    </section>
+
+    <!-- Menu principale -->
+    <section id="screen-menu" class="screen">
+      <div class="menu-inner">
+        <div class="logo logo-small"><span>NEON BLOCKS</span></div>
+        <div class="logo-sub">NEON SHIFT</div>
+
+        <div class="menu-coins" id="menu-coins">◆ 0</div>
+
+        <nav class="menu-buttons">
+          <button id="btn-play" class="btn btn-primary">GIOCA</button>
+          <button id="btn-levels" class="btn">LIVELLI</button>
+          <button id="btn-endless" class="btn btn-cyan">INFINITA</button>
+          <button id="btn-shop" class="btn btn-pink">NEGOZIO</button>
+          <button id="btn-settings" class="btn btn-ghost">IMPOSTAZIONI</button>
+        </nav>
+        <p class="hint">Frecce/A-D muovi · Spazio salta · E/Shift cambia energia</p>
+        <div class="copyright copyright-center">Copyright Pluton Games R.M</div>
+      </div>
+    </section>
+
+    <!-- Selezione livelli -->
+    <section id="screen-levels" class="screen">
+      <div class="panel">
+        <h2>SELEZIONE LIVELLI</h2>
+        <div id="level-list" class="level-list"></div>
+        <button id="btn-levels-back" class="btn btn-ghost">INDIETRO</button>
+      </div>
+    </section>
+
+    <!-- Negozio cosmetico -->
+    <section id="screen-shop" class="screen">
+      <div class="panel">
+        <h2>NEGOZIO SKIN</h2>
+        <div class="shop-coins" id="shop-coins">◆ 0</div>
+        <div id="shop-list" class="shop-list"></div>
+        <button id="btn-shop-back" class="btn btn-ghost">INDIETRO</button>
+      </div>
+    </section>
+
+    <!-- Impostazioni -->
+    <section id="screen-settings" class="screen">
+      <div class="panel">
+        <h2>IMPOSTAZIONI</h2>
+
+        <div class="setting-row">
+          <span>Effetti sonori</span>
+          <button id="set-audio" class="toggle" role="switch"><i></i></button>
+        </div>
+        <div class="setting-row">
+          <span>Scosse dello schermo</span>
+          <button id="set-shake" class="toggle" role="switch"><i></i></button>
+        </div>
+        <div class="setting-row">
+          <span>Effetti ridotti (accessibilità)</span>
+          <button id="set-fx" class="toggle" role="switch"><i></i></button>
+        </div>
+
+        <div class="setting-info">
+          Progressi, monete e record sono salvati solo su questo dispositivo (localStorage).
+        </div>
+
+        <p class="copyright copyright-static">Copyright Pluton Games R.M</p>
+
+        <button id="btn-settings-back" class="btn btn-ghost">INDIETRO</button>
+      </div>
+    </section>
+
+    <!-- Pausa -->
+    <section id="screen-pause" class="screen">
+      <div class="panel panel-narrow">
+        <h2>PAUSA</h2>
+        <div id="pause-info" class="panel-sub"></div>
+        <button id="btn-resume" class="btn btn-primary">RIPRENDI</button>
+        <button id="btn-restart" class="btn">RICOMINCIA</button>
+        <button id="btn-pause-menu" class="btn btn-ghost">MENU</button>
+      </div>
+    </section>
+
+    <!-- Livello completato -->
+    <section id="screen-complete" class="screen">
+      <div class="panel panel-narrow">
+        <h2 id="complete-title">LIVELLO COMPLETATO</h2>
+        <div class="result-rows">
+          <div class="result-row"><span>Punteggio</span><b id="complete-score">0</b></div>
+          <div class="result-row"><span>Monete raccolte</span><b id="complete-coins">0</b></div>
+          <div class="result-row"><span>Bonus vite</span><b id="complete-bonus">0</b></div>
+        </div>
+        <button id="btn-next" class="btn btn-primary">PROSSIMO LIVELLO</button>
+        <button id="btn-replay" class="btn">RIPROVA</button>
+        <button id="btn-complete-menu" class="btn btn-ghost">MENU</button>
+      </div>
+    </section>
+
+    <!-- Game Over -->
+    <section id="screen-gameover" class="screen">
+      <div class="panel panel-narrow">
+        <h2 class="title-danger">GAME OVER</h2>
+        <div class="result-rows">
+          <div class="result-row"><span>Punteggio</span><b id="gameover-score">0</b></div>
+          <div class="result-row"><span>Record</span><b id="gameover-best">0</b></div>
+          <div class="result-row"><span>Monete salvate</span><b id="gameover-coins">0</b></div>
+        </div>
+        <button id="btn-go-restart" class="btn btn-primary">RICOMINCIA</button>
+        <button id="btn-go-menu" class="btn btn-ghost">MENU</button>
+      </div>
+    </section>
+
+    <!-- Messaggio transitorio -->
+    <div id="toast" class="toast" aria-live="polite"></div>
+  </div>
+
+  <!-- Script in ordine dipendente: costanti → utilità → gameplay → avvio -->
+  <script src="src/constants.js"></script>
+  <script src="src/storage.js"></script>
+  <script src="src/audio.js"></script>
+  <script src="src/particles.js"></script>
+  <script src="src/physics.js"></script>
+  <script src="src/controls.js"></script>
+  <script src="src/player.js"></script>
+  <script src="src/levels.js"></script>
+  <script src="src/endless.js"></script>
+  <script src="src/ui.js"></script>
+  <script src="src/game.js"></script>
+  <script src="src/main.js"></script>
+</body>
+</html>
