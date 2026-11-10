@@ -329,6 +329,38 @@ dl{gap:14px 20px}
 #l5 h2{font-size:clamp(34px,7.4vw,88px);line-height:1.02;letter-spacing:-.035em;background:linear-gradient(100deg,#fff 5%,var(--cyan) 45%,var(--mag) 85%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 0 30px rgba(255,43,214,.3));padding-bottom:.08em}
 #l5 .coinrow{margin:26px 0}
 #l5 .lvtag{align-self:center}
+
+/* ===== presentation mode + Mario-style level warp ===== */
+html,body{overflow:hidden;overscroll-behavior:none}
+#clear{position:fixed;left:50%;transform:translateX(-50%) translateY(10px);bottom:calc(128px + env(safe-area-inset-bottom,0px));z-index:41;opacity:0;pointer-events:none;transition:.35s;font-family:var(--display);text-align:center;line-height:1.9;padding:14px 20px;background:rgba(5,2,15,.82);border:3px solid var(--yel);box-shadow:0 0 28px rgba(255,225,77,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+#clear b{display:block;font-weight:400;font-size:clamp(14px,2.6vw,24px);color:var(--yel);text-shadow:0 0 14px rgba(255,225,77,.7)}
+#clear span{display:block;font-size:clamp(9px,1.5vw,12px);color:var(--cyan);animation:cblink 1s steps(2) infinite}
+#clear.on{opacity:1;transform:translateX(-50%)}
+@keyframes cblink{50%{opacity:.25}}
+
+#warp{position:fixed;inset:0;z-index:90;display:none;background:#05020F;cursor:none;overflow:hidden}
+#warp.on{display:block}
+.wcard{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:clamp(14px,3vh,26px);text-align:center;padding:24px 24px 90px}
+#warp.card .wcard{display:flex}
+.wtop{position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-between;padding:18px 24px;font-family:var(--display);font-size:clamp(9px,1.6vw,13px);color:var(--fg);letter-spacing:.06em}
+.wtop b{color:var(--yel);font-weight:400}
+.wworld{font-family:var(--display);font-size:clamp(22px,5.6vw,58px);color:var(--yel);text-shadow:0 0 18px rgba(255,225,77,.65),4px 4px 0 #8A1BA8;letter-spacing:.04em;line-height:1.3}
+.wname{font-family:var(--display);font-size:clamp(11px,2.4vw,22px);color:var(--cyan);text-shadow:0 0 12px var(--cyan);line-height:1.8;max-width:90vw}
+.wlives{display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:clamp(12px,2.2vw,20px);color:var(--fg)}
+.wlives svg{width:28px;height:24px;fill:var(--mag);filter:drop-shadow(0 0 6px var(--mag))}
+.wground{position:absolute;left:0;right:0;bottom:0;height:64px;border-top:4px solid var(--mag);box-shadow:0 -6px 24px rgba(255,43,214,.45);
+  background:repeating-linear-gradient(90deg,transparent 0 60px,rgba(255,43,214,.55) 60px 64px),repeating-linear-gradient(0deg,#1a0a3d 0 28px,rgba(255,43,214,.55) 28px 32px),#1a0a3d}
+#wspr{position:absolute;bottom:64px;left:0;image-rendering:pixelated;transform:translateX(-120px);filter:drop-shadow(0 0 10px rgba(25,243,255,.6))}
+#warp.card #wspr{animation:wrun 1.5s linear forwards,wbob .24s steps(2) infinite}
+@keyframes wrun{from{left:0}to{left:calc(100vw + 120px)}}
+@keyframes wbob{50%{margin-bottom:6px}}
+#pres{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:10px;padding:7px 8px 7px 16px;border-radius:999px;background:var(--glass);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--edge);font-family:var(--mono);font-size:11px;color:var(--fg);white-space:nowrap;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+#pres{display:flex}
+#pres b{color:var(--yel);font-weight:600}
+#pres .keys{color:var(--muted)}
+#pres button{font:inherit;color:var(--fg);background:rgba(255,255,255,.08);border:1px solid var(--edge);border-radius:999px;padding:6px 11px;cursor:pointer}
+#pres button:hover{background:rgba(255,43,214,.3)}
+@media (max-width:640px){#pres .keys{display:none}}
 </style>
 </head>
 <body>
@@ -359,15 +391,16 @@ dl{gap:14px 20px}
         <h1>Riccardo<br>Menegaldo</h1>
         <p class="role"><span id="role">IT STUDENT</span><span class="caret"></span></p>
         <div class="ribbon" aria-label="In breve"><span class="rb">AGE 18</span><span class="rb">FOUNDER MODE: ON</span><span class="rb">F1 FAN</span></div>
-        <p class="lead">I study IT and I love every kind of tech, from code to hardware. My dream is to build my own digital agency, PlutonX, and maybe one day work in Formula 1. Scroll to play through my story.</p>
+        <p class="lead">I study IT and I love every kind of tech, from code to hardware. My dream is to build my own digital agency, PlutonX, and maybe one day work in Formula 1. Press SPACE to play through my story.</p>
         <div class="btns">
           <a class="btn" href="#l1" id="startBtn">&#9654; PRESS START</a>
+          <a class="btn alt" href="#l3" id="presBtn">&#9205; PRESENT · SPACE</a>
           <a class="btn alt" href="#l3">MEET PLUTONX</a>
         </div>
       </div>
       <div class="box pcard">
         <canvas id="hero-sprite" aria-label="Riccardo's pixel art character" role="img"></canvas>
-        <div><p class="cap">PLAYER 1 · RICCARDO</p><p class="cap2">Press Enter to start</p></div>
+        <div><p class="cap">PLAYER 1 · RICCARDO</p><p class="cap2">Press SPACE to start</p></div>
       </div>
     </div>
     <div class="coinrow" data-coins><button class="coin" type="button" aria-label="Collect coin, 10 points"></button><button class="coin" type="button" aria-label="Collect coin, 10 points"></button><button class="coin" type="button" aria-label="Collect coin, 10 points"></button><span class="coinlabel">&larr; COLLECT THEM</span></div>
@@ -503,6 +536,10 @@ dl{gap:14px 20px}
   <svg class="flag" viewBox="0 0 7 9" aria-hidden="true" shape-rendering="crispEdges"><rect x="0" y="0" width="1" height="9" fill="#F3EDFF"/><rect x="1" y="0" width="5" height="4" fill="#FF2BD6"/><rect x="1" y="1" width="2" height="2" fill="#FFE14D"/></svg>
 </div></nav>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="warp" aria-hidden="true"><div class="wtop"><span>SCORE <b id="wscore">000000</b></span><span>PLAYER 1</span></div><div class="wcard"><div class="wworld" id="wworld">WORLD 1-1</div><div class="wname" id="wname">WHO I AM</div><div class="wlives"><svg viewBox="0 0 7 6" aria-hidden="true"><use href="#heart"/></svg><span>&times; 3</span></div></div><canvas id="wspr"></canvas><div class="wground"></div></div>
+<div id="clear" aria-live="polite"><b id="cb">LEVEL CLEAR!</b><span id="cs">PRESS SPACE &#9654;</span></div>
+<div id="pres" role="group" aria-label="Presentation controls"><span><b id="pn">1/8</b> <span id="pt">TITLE SCREEN</span></span><span class="keys">SPACE next &middot; SHIFT+SPACE back &middot; tap SHIFT reload</span><button type="button" id="pprev" aria-label="Previous level">&#9664;</button><button type="button" id="pnext" aria-label="Next level">&#9654;</button><button type="button" id="pexit" aria-label="Exit to title screen">EXIT</button><button type="button" id="preload" aria-label="Reload everything (Shift)">&#8635; RELOAD</button></div>
+
 
 <script>
 (function(){
@@ -647,7 +684,7 @@ $$('[data-copy]').forEach(function(b){b.addEventListener('click',function(){var 
   try{navigator.clipboard.writeText(t).then(function(){toast('Copied! +20');add(20)},fb)}catch(e){fb()}})});
 
 /* ---------- keyboard: Enter on title screen ---------- */
-addEventListener('keydown',function(e){if(e.key==='Enter'&&scrollY<200&&!/^(BUTTON|A|INPUT)$/.test(document.activeElement.tagName)){$('#l1').scrollIntoView({behavior:reduce?'auto':'smooth'})}});
+
 
 /* ---------- runner progress ---------- */
 var rail=$('#rail'),markers=[];
@@ -849,6 +886,60 @@ cv.__seek=function(t){T=t;draw(T);ui()};
 T=reduce?20:0;draw(T);ui();requestAnimationFrame(loop);
 })();
 
+/* ---------- presentation mode: SPACE starts it, every topic change is a Mario-style level warp ---------- */
+(function(){
+var WORLDS={hero:['TITLE SCREEN','PLAYER 1 READY'],l1:['WORLD 1-1','WHO I AM'],l2:['WORLD 1-2','SKILL TREE'],l3:['WORLD 1-3','THE COMPANY: PLUTONX'],l4:['WORLD 1-4','PIT LANE · FORMULA 1'],l4b:['WORLD 2-1','QUEST LOG'],cutscene:['WORLD 2-2','MY STORY IN PIXELS'],l5:['FINAL WORLD','THE END']};
+var secs=$$('main section'),on=false,busy=false,pi=0,clr=$('#clear'),warp=$('#warp'),spr=$('#wspr');
+drawRows(spr,ROWS,6);
+function cur(){var b=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=innerHeight*.35)b=i});return b}
+function iris(a,b,ms){return new Promise(function(res){var t0=performance.now(),mx=Math.hypot(innerWidth,innerHeight)/2+12;
+  function f(now){var k=ms?Math.min(1,(now-t0)/ms):1;k=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;var r=(a+(b-a)*k)*mx;
+    warp.style.background='radial-gradient(circle at 50% 50%,transparent '+r+'px,#05020F '+(r+1)+'px)';
+    if(k<1)requestAnimationFrame(f);else res()}
+  requestAnimationFrame(f)})}
+function atEnd(){return secs[pi].getBoundingClientRect().bottom<=innerHeight-72}
+function upd(){if(!on||busy){clr.classList.remove('on');return}
+  var last=pi===secs.length-1;$('#cb').textContent=pi===0?'PLAYER 1 READY':'LEVEL CLEAR!';$('#cs').innerHTML=pi===0?'PRESS SPACE TO START &#9654;':'PRESS SPACE &#9654;';
+  clr.classList.toggle('on',pi>0&&atEnd()&&!last)}
+function nextStep(){if(busy)return;
+  if(pi>0&&!atEnd()){var d=Math.min(innerHeight*.7,secs[pi].getBoundingClientRect().bottom-(innerHeight-90));window.scrollBy({top:d,behavior:reduce?'auto':'smooth'});clr.classList.remove('on');setTimeout(function(){upd();if(atEnd())sfx('coin')},reduce?50:650);return}
+  go(pi+1)}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms)})}
+function jingle(){if(!sound||!AC)return;var t=AC.currentTime+.02,d=AC.master;
+  [[72,0],[76,.08],[79,.16],[84,.24],[79,.36],[84,.44],[88,.52]].forEach(function(n){tone('square',n[0],t+n[1],.12,.1,d);tone('triangle',n[0]-12,t+n[1],.12,.16,d)});
+  tone('square',91,t+.64,.4,.09,d);tone('triangle',79,t+.64,.4,.14,d)}
+function down(){if(!sound||!AC)return;var t=AC.currentTime+.01,d=AC.master;[84,79,74,69,64].forEach(function(m,i){tone('square',m,t+i*.06,.1,.09,d)})}
+function label(i){var w=WORLDS[secs[i].id]||['',''];$('#pn').textContent=(i+1)+'/'+secs.length;$('#pt').textContent=w[0]===w[1]?w[0]:(w[0]+' · '+w[1])}
+function go(n){
+  if(busy||n<0||n>=secs.length){if(!busy&&n>=secs.length)toast('THE END · ESC to exit');return}
+  busy=true;clr.classList.remove('on');var w=WORLDS[secs[n].id]||['',''],ms=reduce?0:520,hold=reduce?500:1550;
+  $('#wworld').textContent=w[0];$('#wname').textContent=w[1];$('#wscore').textContent=pad(score);
+  warp.classList.remove('card');warp.classList.add('on');down();
+  iris(1,0,ms).then(function(){
+    warp.classList.add('card');jingle();
+    var s=secs[n];window.scrollTo({top:n?Math.max(0,s.getBoundingClientRect().top+scrollY-84):0,behavior:'instant'});label(n);pi=n;
+    spr.style.animation='none';void spr.offsetWidth;spr.style.animation='';
+    return wait(hold)}).then(function(){warp.classList.remove('card');return iris(0,1,ms)}).then(function(){
+    warp.classList.remove('on');warp.style.background='';busy=false;setTimeout(function(){upd();if(atEnd())sfx('coin')},350)})}
+on=true;pi=0;label(0);setTimeout(upd,600);
+addEventListener('keydown',function(e){
+  if(e.ctrlKey||e.metaKey||e.altKey)return;var k=e.key;
+  if(k===' '||k==='Spacebar'||k==='PageDown'||k==='PageUp'||k==='Backspace'){
+    e.preventDefault();var ae=document.activeElement;if(ae&&(ae.tagName==='BUTTON'||ae.tagName==='A'))ae.blur();
+    if(k==='PageUp'||k==='Backspace'||(k===' '&&e.shiftKey))go(pi-1);else nextStep()}
+  });
+$('#pnext').addEventListener('click',nextStep);
+$('#pexit').addEventListener('click',function(){if(pi!==0)go(0);else toast('You are on the title screen')});
+$('#preload').addEventListener('click',function(){location.reload()});
+var shiftOnly=false;
+addEventListener('keydown',function(e){if(e.key==='Shift'){if(!e.repeat)shiftOnly=true}else{shiftOnly=false;if(e.key==='Escape'&&pi!==0)go(0)}});
+addEventListener('keyup',function(e){if(e.key==='Shift'&&shiftOnly){shiftOnly=false;location.reload()}});
+$('#pprev').addEventListener('click',function(){go(pi-1)});
+$('#presBtn').addEventListener('click',function(e){e.preventDefault();nextStep()});
+$$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href').slice(1),t=document.getElementById(id);if(!t)return;e.preventDefault();var n=secs.indexOf(t);if(n>=0&&n!==pi)go(n)})});
+try{history.scrollRestoration='manual'}catch(e){}window.scrollTo({top:0,behavior:'instant'});
+addEventListener('resize',upd);
+})();
 })();
 </script>
 
