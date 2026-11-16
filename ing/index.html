@@ -332,11 +332,11 @@ dl{gap:14px 20px}
 
 /* ===== presentation mode + Mario-style level warp ===== */
 html,body{overflow:hidden;overscroll-behavior:none}
-#clear{position:fixed;left:50%;transform:translateX(-50%) translateY(10px);bottom:calc(128px + env(safe-area-inset-bottom,0px));z-index:41;opacity:0;pointer-events:none;transition:.35s;font-family:var(--display);text-align:center;line-height:1.9;padding:14px 20px;background:rgba(5,2,15,.82);border:3px solid var(--yel);box-shadow:0 0 28px rgba(255,225,77,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-#clear b{display:block;font-weight:400;font-size:clamp(14px,2.6vw,24px);color:var(--yel);text-shadow:0 0 14px rgba(255,225,77,.7)}
-#clear span{display:block;font-size:clamp(9px,1.5vw,12px);color:var(--cyan);animation:cblink 1s steps(2) infinite}
-#clear.on{opacity:1;transform:translateX(-50%)}
-@keyframes cblink{50%{opacity:.25}}
+#pres .pc{display:none;font-family:var(--display);font-size:10px;letter-spacing:.04em;color:var(--yel);text-shadow:0 0 10px rgba(255,225,77,.7);animation:cblink 1s steps(2) infinite}
+#pres.on{border-color:rgba(255,225,77,.7);box-shadow:0 0 18px rgba(255,225,77,.35),0 8px 30px rgba(0,0,0,.4)}
+#pres.on .pc{display:inline}
+#pres.on .keys,#pres.on #pt,#pres.on #pn{display:none}
+@keyframes cblink{50%{opacity:.35}}
 
 #warp{position:fixed;inset:0;z-index:90;display:none;background:#05020F;cursor:none;overflow:hidden}
 #warp.on{display:block}
@@ -537,8 +537,7 @@ html,body{overflow:hidden;overscroll-behavior:none}
 </div></nav>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div id="warp" aria-hidden="true"><div class="wtop"><span>SCORE <b id="wscore">000000</b></span><span>PLAYER 1</span></div><div class="wcard"><div class="wworld" id="wworld">WORLD 1-1</div><div class="wname" id="wname">WHO I AM</div><div class="wlives"><svg viewBox="0 0 7 6" aria-hidden="true"><use href="#heart"/></svg><span>&times; 3</span></div></div><canvas id="wspr"></canvas><div class="wground"></div></div>
-<div id="clear" aria-live="polite"><b id="cb">LEVEL CLEAR!</b><span id="cs">PRESS SPACE &#9654;</span></div>
-<div id="pres" role="group" aria-label="Presentation controls"><span><b id="pn">1/8</b> <span id="pt">TITLE SCREEN</span></span><span class="keys">SPACE next &middot; SHIFT+SPACE back &middot; tap SHIFT reload</span><button type="button" id="pprev" aria-label="Previous level">&#9664;</button><button type="button" id="pnext" aria-label="Next level">&#9654;</button><button type="button" id="pexit" aria-label="Exit to title screen">EXIT</button><button type="button" id="preload" aria-label="Reload everything (Shift)">&#8635; RELOAD</button></div>
+<div id="pres" role="group" aria-label="Presentation controls"><span><b id="pn">1/8</b> <span id="pt">TITLE SCREEN</span></span><span class="pc">LEVEL CLEAR! SPACE &#9654;</span><span class="keys">SPACE next &middot; SHIFT+SPACE back &middot; tap SHIFT reload</span><button type="button" id="pprev" aria-label="Previous level">&#9664;</button><button type="button" id="pnext" aria-label="Next level">&#9654;</button><button type="button" id="pexit" aria-label="Exit to title screen">EXIT</button><button type="button" id="preload" aria-label="Reload everything (Shift)">&#8635; RELOAD</button></div>
 
 
 <script>
@@ -889,7 +888,7 @@ T=reduce?20:0;draw(T);ui();requestAnimationFrame(loop);
 /* ---------- presentation mode: SPACE starts it, every topic change is a Mario-style level warp ---------- */
 (function(){
 var WORLDS={hero:['TITLE SCREEN','PLAYER 1 READY'],l1:['WORLD 1-1','WHO I AM'],l2:['WORLD 1-2','SKILL TREE'],l3:['WORLD 1-3','THE COMPANY: PLUTONX'],l4:['WORLD 1-4','PIT LANE · FORMULA 1'],l4b:['WORLD 2-1','QUEST LOG'],cutscene:['WORLD 2-2','MY STORY IN PIXELS'],l5:['FINAL WORLD','THE END']};
-var secs=$$('main section'),on=false,busy=false,pi=0,clr=$('#clear'),warp=$('#warp'),spr=$('#wspr');
+var secs=$$('main section'),on=false,busy=false,pi=0,clr=$('#pres'),warp=$('#warp'),spr=$('#wspr');
 drawRows(spr,ROWS,6);
 function cur(){var b=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=innerHeight*.35)b=i});return b}
 function iris(a,b,ms){return new Promise(function(res){var t0=performance.now(),mx=Math.hypot(innerWidth,innerHeight)/2+12;
@@ -899,7 +898,7 @@ function iris(a,b,ms){return new Promise(function(res){var t0=performance.now(),
   requestAnimationFrame(f)})}
 function atEnd(){return secs[pi].getBoundingClientRect().bottom<=innerHeight-72}
 function upd(){if(!on||busy){clr.classList.remove('on');return}
-  var last=pi===secs.length-1;$('#cb').textContent=pi===0?'PLAYER 1 READY':'LEVEL CLEAR!';$('#cs').innerHTML=pi===0?'PRESS SPACE TO START &#9654;':'PRESS SPACE &#9654;';
+  var last=pi===secs.length-1;
   clr.classList.toggle('on',pi>0&&atEnd()&&!last)}
 function nextStep(){if(busy)return;
   if(pi>0&&!atEnd()){var d=Math.min(innerHeight*.7,secs[pi].getBoundingClientRect().bottom-(innerHeight-90));window.scrollBy({top:d,behavior:reduce?'auto':'smooth'});clr.classList.remove('on');setTimeout(function(){upd();if(atEnd())sfx('coin')},reduce?50:650);return}
