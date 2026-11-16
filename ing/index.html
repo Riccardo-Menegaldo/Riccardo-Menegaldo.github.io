@@ -798,12 +798,17 @@ var BG2=mk(function(){var FY=126,y,i,q=rng(21);
 
 /* scene 2: code, fix, dream */
 var LN=[22,30,16,34,12,26,36,20],LC=[CY,MG,YL,LIME,CY,VIO,YL,MG];
-function f1screen(t){var X=227,Y=67,i,cols=[MG,CY,YL,LIME,VIO,'#FF8A3D'];
-  R(X,Y,44,30,'#0c0f26');R(X,Y,44,4,'#FF3D5A');R(X+2,Y+1,7,2,WH);R(X+36,Y+1,6,2,'#ffb3bd');
-  for(i=0;i<6;i++){var ci=(i+Math.floor(t*.6))%6;R(X+2,Y+6+i*3,2,2,cols[ci]);R(X+5,Y+6+i*3,9-i,2,'#8c82c8')}
-  for(var a=0;a<360;a+=9){var r=a*Math.PI/180;R(X+29+12*Math.cos(r),Y+15+8*Math.sin(r),2,1,'#4a4f8a')}
-  for(var k=0;k<4;k++){var th=t*(1.5+k*.07)+k*1.6;R(X+28+12*Math.cos(th),Y+14+8*Math.sin(th),2,2,cols[k])}
-  R(X+2,Y+26,12,2,'#FF3D5A');R(X+14,Y+26,14,2,YL);R(X+28,Y+26,10,2,WH);R(X+2+((t*4)%36),Y+25,1,4,INK)}
+function f1screen(t){var X=227,Y=67,i,k,cols=[MG,CY,YL,LIME,VIO,'#FF8A3D'];
+  R(X,Y,44,30,'#0c0f26');
+  R(X,Y,44,4,'#FF3D5A');R(X+2,Y+1,7,2,WH);if(Math.floor(t*2)%2)R(X+11,Y+1,2,2,WH);R(X+34,Y+1,8,2,'#ffb3bd');
+  R(X,Y+4,44,8,'#1d1b4d');for(i=0;i<22;i++){R(X+1+i*2,Y+5+(i%3)*2+Math.floor(t*3+i)%2,1,1,cols[(i*5)%6])}
+  R(X,Y+12,44,1,'#2b2a66');
+  R(X,Y+13,44,13,'#3a3a55');
+  for(i=0;i<8;i++){var kx=X+((i*7-Math.floor(t*30))%56+56)%56;if(kx<X+43){R(kx,Y+13,3,1,i%2?WH:'#FF3D5A');R(kx,Y+25,3,1,i%2?'#FF3D5A':WH)}}
+  for(i=0;i<5;i++){var dx=X+((i*10-Math.floor(t*22))%50+50)%50;if(dx<X+42)R(dx,Y+19,5,1,'#8c82c8')}
+  for(k=0;k<3;k++){var pos=((t*(14+k*5)+k*19)%64)-14,cx=Math.floor(X+pos),cy=Y+14+k*4;
+    if(cx>=X&&cx<=X+32){R(cx,cy+1,9,2,cols[k]);R(cx+9,cy+2,2,1,cols[k]);R(cx,cy,2,1,cols[k]);R(cx+4,cy,2,1,WH);R(cx+1,cy+2,2,2,INK);R(cx+6,cy+2,2,2,INK)}}
+  R(X,Y+26,44,4,'#12062e');R(X+2,Y+27,12,2,'#FF3D5A');R(X+14,Y+27,14,2,YL);R(X+28,Y+27,10,2,WH);R(X+2+((t*4)%36),Y+26,1,4,INK)}
 function screen(t){R(227,67,44,30,'#04051a');R(225,65,48,34,'rgba(25,243,255,.07)');
   if(t>=33.5&&t<39.5){f1screen(t);return}
   if(t>=39.5&&t<39.65){R(227,67,44,30,WH);return}
@@ -868,7 +873,7 @@ function draw(t){g=c;scene2(t+16);
   if(t<.6)R(0,0,W,H,'rgba(5,2,12,'+(1-t/.6).toFixed(2)+')');if(t>TOTAL-1)R(0,0,W,H,'rgba(5,2,12,'+clamp(t-(TOTAL-1),0,1).toFixed(2)+')')}
 
 /* controls */
-var caps=[[0,'Writing code, one line at a time.'],[7,'The PC is broken. Time to fix it.'],[10,'Out with the faulty memory...'],[11.4,'...in with a new one.'],[12.8,'Power on!'],[14,'Fixed! Ready for the next challenge.'],[17.5,'Thinking about Formula 1... time to play F1 Manager!'],[23.6,'Now the other dream: PlutonX, my own company.'],[26.5,'Writing, thinking, building it step by step.'],[29.5,'To be continued...']];
+var caps=[[0,'Writing code, one line at a time.'],[7,'The PC is broken. Time to fix it.'],[10,'Out with the faulty memory...'],[11.4,'...in with a new one.'],[12.8,'Power on!'],[14,'Fixed! Ready for the next challenge.'],[17.5,'Thinking about Formula 1... time to watch an F1 race!'],[23.6,'Now the other dream: PlutonX, my own company.'],[26.5,'Writing, thinking, building it step by step.'],[29.5,'To be continued...']];
 var chs=[['CODE',0],['FIX',7],['F1',17.5],['PLUTONX',23.6]];
 var T=0,playing=false,last=0,vis=false,sub=$('#sub'),chap=$('#chap'),play=$('#play'),lastCap=-1,lastCh=-1,chips=[];
 chs.forEach(function(ch,i){var b=document.createElement('button');b.type='button';b.className='chip2';b.textContent=ch[0];b.setAttribute('aria-current','false');
